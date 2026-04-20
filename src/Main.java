@@ -1,16 +1,31 @@
-import javax.swing.*; // подключаем все средства java Swing
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.Group;
+import javafx.scene.text.Text;
 
-public class Main { // класс с методом main()
+public class Main extends Application{
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("wav2txt"); // Для окна нужна "рама" - Frame
-        // стандартное поведение при закрытии окна - завершение приложения
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300, 300); // размеры окна
-        frame.setLocationRelativeTo(null); // окно - в центре экрана
-        JButton button = new JButton("Press"); // Экземпляр класса JButton
-        // getContentPane() - клиентская область окна
-        frame.getContentPane().add(button); // Добавляем кнопку на Frame
-        frame.setVisible(true); // Делаем окно видимым
+
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage stage) {
+
+        // установка надписи
+        Text text = new Text("Hello METANIT.COM!");
+        text.setLayoutY(80);    // установка положения надписи по оси Y
+        text.setLayoutX(80);   // установка положения надписи по оси X
+
+        Group group = new Group(text);
+
+        Scene scene = new Scene(group);
+        stage.setScene(scene);
+        stage.setTitle("JavaFX Application");
+        stage.setWidth(300);
+        stage.setHeight(250);
+        stage.show();
     }
 }
