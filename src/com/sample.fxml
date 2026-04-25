@@ -8,6 +8,8 @@
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.MainController">
 
+    <Label fx:id="newtime" text="..."/>
+
     <Label text="Введите ваше имя:"/>
 
     <TextField fx:id="nameField" promptText="Ваше имя..."/>
